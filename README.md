@@ -1,5 +1,5 @@
 # What is Videoflo
-An on-premise WebRTC based SaaS API to build video-based workflows such as Video KYC, Customer Onboarding, etc. Currently Videoflo is being built with exclusive focus on enabling video-based & agent controlled Video KYC applications.
+Videoflo is an on-premise WebRTC based SaaS API to build video-based workflows such as Video KYC, Customer Onboarding, etc. Currently Videoflo is being built with exclusive focus on enabling video-based & agent controlled Video KYC applications.
 
 However, Videoflo in the future is envisioned to support the following types of video interactions:
 - P2P Video workflows – allowing two participants to connect via video connection over WebRTC and perform workflows such as remote verification of BC locations. This mode will not require a WebRTC server and will provide very limited recording capabilities.
