@@ -1,4 +1,4 @@
 theme: jekyll-theme-modernist
 title: Videoflo
 description: An application framework to build "on-premise" video-based workflows.
-show_downloads: true
+show_downloads: false

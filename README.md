@@ -13,50 +13,16 @@ However, Videoflo in the future is envisioned to support the following types of 
 Videoflo is primarily a video conferencing based workflow application. Therefore, before we get into the technical details of the integration, let us first introduce you to some of terminologies you will see throughout our docs.
 
 The following key actors and subjects are required before you can start using it in your application.
-1. **Session**: All workflows execute within a video conference session. Therefore, executing a workflow requires a session to be created.
-2. **Participants**: Each session requires two or more participants. Videoflo does not require creation of user accounts for each session. However, each *participant* must be assigned an *externalParticipantId* that uniquely identifies the participant within that session.
+1. **Session**: All workflows execute within a video conference session. Therefore, executing a workflow requires a session to be created with appropriate participants and other configurations.
+2. **Participants**: Each session requires two or more participants. Videoflo does not require creation of user accounts for each participant. However, each *participant* must be assigned an *externalParticipantId* that uniquely identifies the participant within a session.
 3. **Activities**: A workflow consists of multiple steps to be executed. In Videoflo such steps are called *Activities*. Videoflo comes with a built-in set of activities. In future, APIs will be provided for integration partners to build their own activities as well. However, current support is limited to built-in activities only.
 4. **Webhooks**: Videoflo needs a way to send events and data back to your application. Webhooks are used for this purpose.
+5. **App ID**: When making ReST API calls, your application needs to authenticate itself with Videoflo. Moreover, your account with Videoflo can contain multiple *projects*. Each project will be assigned a unique **appId**; this is the equivalent of username for that project.
+6. **Secret Key**: Each one of your projects will also be assigned an auto-generated **secretKey**; this is the equivalent of password for that project. The appId and secretKey should be stored securely on your server and never be shared or served.
+7. **Token**: This is an authentication token generated using the *appId* and *secretKey*. Your application server should generate the tokens and pass them on to frontend applications, so that the frontend can authenticate with Videoflo servers without needing access to the appId and secretKey.
 
 Now that you are familiarized with the terminology, let us dig into the integration. Integration happens at two levels:
 1. **Backend**: Your application's server, should be primarily responsible for invoking Videoflo ReST APIs to create sessions, generate tokens on behalf users, retrieve data and call recordings etc.
 2. **frontend**: As of now, Videoflo only supports browser based applications. We intend to support mobile and desktop applications as well in the future. Currently there are two SDKs available:
    1. **[Videoflo Angular Library](docs/angular-library.md)**
    2. **[Videoflo Web Component](docs/web-component.md)**
-
-
-You can use the [editor on GitHub](https://github.com/botaiml/videoflo-sdk/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/botaiml/videoflo-sdk/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
